@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 # Day 1:
 input_day1 = pd.read_csv('day1input.txt', names=['input'])
@@ -12,7 +11,7 @@ def day1_part1():
 print(day1_part1())
 
 # Part 2: What is the first frequency input reaches twice?
-def get_first_frequency(input):
+def day1_part2(input):
     frequency = 0
     duplicates = set()
     while True:
@@ -23,4 +22,4 @@ def get_first_frequency(input):
             else:
                 duplicates.add(frequency)
 
-print(get_first_frequency(values))
+print(day1_part2(values))
