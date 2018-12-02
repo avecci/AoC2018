@@ -4,11 +4,10 @@ import pandas as pd
 input_day1 = pd.read_csv('day1input.txt', names=['input'])
 values = input_day1['input']
 # Part 1: Calculate sum of input, starting from 0.
-def day1_part1():
-    sum = values.sum()
-    return sum
+def day1_part1(input):
+    sumofall = sum(input)
+    return sumofall
 
-print(day1_part1())
 
 # Part 2: What is the first frequency input reaches twice?
 def day1_part2(input):
@@ -22,4 +21,6 @@ def day1_part2(input):
             else:
                 duplicates.add(frequency)
 
-print(day1_part2(values))
+if __name__ == '__main__':
+    print(day1_part1(values))
+    print(day1_part2(values))

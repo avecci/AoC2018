@@ -21,7 +21,6 @@ def checksum(input):
     result = reduce(lambda x, y: x*y, count_of_occurrences)
     return result
 
-#print('Checksum:',checksum(values))
 
 # Part 2: First find the most common boxes - ones that differ least.
 #Then print the letters that do not differ.
@@ -29,6 +28,11 @@ def findboxes(input):
     for i,firstbox in enumerate(input[:-1]):
         for secondbox in input[i+1:]:
             similarities = [t for t, s in zip(firstbox,secondbox) if t==s]
-            return 'Boxes that have similar id:', firstbox,secondbox, 'Common characters:', ''.join(similarities)
+            if len(similarities) == len(firstbox)-1:
+                #return 'Boxes that have similar id:', firstbox,secondbox, 'Common characters:', ''.join(similarities)
+                return ''.join(similarities)
 
-#print(findboxes(values))
+
+if __name__ == '__main__':
+    print(checksum(values))
+    print(findboxes(values))
