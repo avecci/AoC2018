@@ -1,9 +1,7 @@
 import pandas as pd
 import collections
 from collections import Counter, defaultdict
-import itertools
 from functools import reduce
-import difflib
 
 input_day2 = pd.read_csv('day2input.txt', names=['input'])
 
@@ -23,7 +21,7 @@ def checksum(input):
     result = reduce(lambda x, y: x*y, count_of_occurrences)
     return result
 
-print('Checksum:',checksum(values))
+#print('Checksum:',checksum(values))
 
 # Part 2: First find the most common boxes - ones that differ least.
 #Then print the letters that do not differ.
@@ -33,4 +31,4 @@ def findboxes(input):
             similarities = [t for t, s in zip(firstbox,secondbox) if t==s]
             return 'Boxes that have similar id:', firstbox,secondbox, 'Common characters:', ''.join(similarities)
 
-print(findboxes(values))
+#print(findboxes(values))
